@@ -1,12 +1,10 @@
-# Load necessary libraries
 library(readr)
 library(dplyr)
 library(stringr)
 
-# Function to process the spreadsheet and return the data frame
 process_spreadsheet <- function(file_path) {
   # Step 1: Read the CSV file into a data frame
-  df <- read_csv(file_path, col_names = TRUE, col_types = cols(.default = "c")) # Ensure all columns are read as text
+  df <- read_csv(file_path, col_names = TRUE, col_types = cols(.default = "c")) 
   
   # Step 2: Remove the second row
   df <- df[-1, ]
@@ -27,7 +25,7 @@ process_spreadsheet <- function(file_path) {
   return(df)
 }
 
-# Example usage:
+# update with your file path:
 file_path <- "C:/Users/ureka/OneDrive/Desktop/ABQ/New folder/demo_census/ACSDT5Y2022.B16004_2024-09-26T125834/ACSDT5Y2022.B16004-Data.csv"
 
 # Process the spreadsheet
